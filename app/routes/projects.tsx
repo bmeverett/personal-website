@@ -51,7 +51,7 @@ export default function Projects() {
   const { projects: blogList } = useLoaderData<LoaderData>()
 
   return (
-    <section className='mx-auto min-h-screen max-w-4xl pt-24'>
+    <section className='mx-auto max-w-4xl pt-24'>
       <BlogList blogList={blogList} />
     </section>
   )
