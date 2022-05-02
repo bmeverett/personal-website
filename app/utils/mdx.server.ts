@@ -149,7 +149,7 @@ export async function getMdxPage({
   slug: string
   contentDirectory: string
 }): ReturnType<typeof getContent> {
-  const data = await getContent(slug)
+  const data = await getContent(slug, contentDirectory)
 
   if (data && !data.requiresUpdate) {
     return data

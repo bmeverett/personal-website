@@ -36,6 +36,7 @@ export async function getContentList(contentDirectory = 'blog') {
       timestamp: true,
       description: true,
       frontmatter: true,
+      contentDirectory: true,
     },
     orderBy: { timestamp: 'desc' },
   })
@@ -43,9 +44,9 @@ export async function getContentList(contentDirectory = 'blog') {
   return contents
 }
 
-export async function getContent(slug: string) {
+export async function getContent(slug: string, contentDirectory: string) {
   const rows = await db.content.findMany({
-    where: { slug, published: true },
+    where: { slug, published: true, contentDirectory },
     select: {
       code: true,
       contentDirectory: true,
